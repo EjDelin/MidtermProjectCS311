@@ -6,6 +6,11 @@ import (
 	"time"
 )
 
+type User struct {
+	name string
+	id   int
+}
+
 // Person represents a simple person.
 type Person struct {
 	FirstName string
@@ -21,8 +26,7 @@ func (p Person) FullName() string {
 // Age calculates the person's age.
 func (p Person) Age() int {
 	// 2. DEMO (IntelliSense - Module):
-	// Basic Code Completion with time module
-	age := time.Now().Year() - p.BirthYear
+
 	return age
 }
 
