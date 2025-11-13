@@ -1,11 +1,11 @@
-package main
+package CodeInspection
 
 import (
 	"fmt"
 	"math"
 )
 
-func testR(radius float64) float64 {
+func TestR(radius float64) float64 {
 	if radius <= 0 {
 		fmt.Println("Invalid radius")
 		return 0
@@ -19,8 +19,8 @@ func calculateDiameter(radius float64) float64 {
 
 func main() {
 	r := -5.0
-	area := testR(r)
+	area := TestR(r)
 	diameter := calculateDiameter(r)
-	unusedValue := 100 // Warning: unused variable
+	//unusedValue := 100 // Warning: unused variable
 	fmt.Printf("Area: %.2f, Diameter: %.2f\n", area, diameter)
 }

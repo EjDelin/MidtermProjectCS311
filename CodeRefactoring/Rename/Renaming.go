@@ -1,10 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"MidProjectPresentation/CodeRefactoring/CodeInspection"
+	"fmt"
+)
 
 func main() {
 	r := 5.0
-	area := testR(r) // works because same package
+	area := CodeInspection.TestR(r) // works because same package
 	fmt.Println("Area:", area)
 }
 
