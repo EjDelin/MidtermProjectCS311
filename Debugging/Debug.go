@@ -1,4 +1,4 @@
-package Debug.go
+package main
 
 import (
 	"fmt"
