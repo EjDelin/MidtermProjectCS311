@@ -37,5 +37,4 @@ func GetMotivationalQuote() string {
 `, quote)
 
 	file.WriteString(content)
-	fmt.Println("✅ generated.go created successfully!")
 }
