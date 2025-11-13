@@ -3,5 +3,5 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Print("END")
+	fmt.Print("ENDFINAL")
 }
