@@ -11,7 +11,7 @@ type Order struct {
 	Amount float64
 }
 
-func processOrder(o Order, wg *sync.WaitGroup /*mu *sync.Mutex,*/, total *float64) {
+func processOrder(o Order, wg *sync.WaitGroup, total *float64 /*mu *sync.Mutex*/) {
 	defer wg.Done()
 	time.Sleep(100 * time.Millisecond)
 	fmt.Printf("Processing order %d\n", o.ID)
@@ -22,11 +22,8 @@ func processOrder(o Order, wg *sync.WaitGroup /*mu *sync.Mutex,*/, total *float6
 	// BUG 2: logic bug, forgot to check for negative orders
 	if o.Amount < 0 {
 		fmt.Printf("Warning: Negative amount detected for order %d\n", o.ID)
-		return
 	}
-	/*mu.Lock()
-	*total -= o.Amount
-	mu.Unlock() */
+
 }
 
 func main() {
@@ -39,9 +36,10 @@ func main() {
 	var total float64
 	var wg sync.WaitGroup
 	//var mu sync.Mutex
+
 	for _, order := range orders {
 		wg.Add(1)
-		go processOrder(order, &wg /*&mu,*/, &total)
+		go processOrder(order, &wg, &total /*&mu*/)
 	}
 
 	wg.Wait()
