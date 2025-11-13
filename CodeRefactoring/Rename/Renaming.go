@@ -1,12 +1,11 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
-	total := addNumbers(5, 10)
-	fmt.Println("Total:", total)
+	r := 5.0
+	area := testR(r) // works because same package
+	fmt.Println("Area:", area)
 }
 
 func addNumbers(a int, b int) int {
