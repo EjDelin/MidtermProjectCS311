@@ -6,7 +6,6 @@ import "fmt"
 //go:generate go run scripts/vehicle.go
 
 func main() {
-	// Call the function that will be auto-generated
 	fmt.Println(GetMotivationalQuote())
 
 }

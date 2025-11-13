@@ -1,4 +1,4 @@
-package Debugging
+package main
 
 import (
 	"fmt"
