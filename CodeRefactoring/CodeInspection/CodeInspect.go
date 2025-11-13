@@ -17,6 +17,7 @@ func calculateDiameter(radius float64) float64 {
 	return radius * 2
 }
 
+// FIXME: Cannot Run Main
 func main() {
 	r := -5.0
 	area := TestR(r)

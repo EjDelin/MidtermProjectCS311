@@ -1,11 +1,9 @@
 package main
 
-import "fmt"
-
 //go:generate go run scripts/gen.go
 
 func main() {
-	fmt.Println(GetMotivationalQuote())
+	//	fmt.Println(GetMotivationalQuote())
 
 }
 
