@@ -1,8 +1,8 @@
 package main
 
 import (
+	"errors"
 	"fmt"
-	"strings"
 	"time"
 )
 
@@ -54,6 +54,7 @@ func SayHello(g Greeter) {
 }
 
 //Generate - Implement Methods
+
 //Generate - type From JSON
 
 func main() {
@@ -76,8 +77,7 @@ func main() {
 	// 7. DEMO (IntelliSense - Module):
 	// strings
 	text := "goland IDE demo"
-	lower := strings.ToLower(text)
-	fmt.Println(lower)
+
 	// 8. DEMO (Shortcuts - Commenting):
 	// Select these next two lines of code with your mouse.
 	// Press 'Ctrl+/' (or 'Cmd+/') to toggle them as comments.
@@ -87,5 +87,10 @@ func main() {
 	// 9. DEMO (Shortcuts - Formatting):
 	//unformatted comment
 	fmt.Println("This line will be auto-formatted.")
+
+	// 10. DEMO (Interface Implementation)
+	// Show that MyLogger (from logger.go) satisfies the Logger interface.
+	// GoLand shows implementation markers in the gutter.
+	// Also, Ctrl/Cmd+Click on 'Logger' to see the interface.
 
 }
