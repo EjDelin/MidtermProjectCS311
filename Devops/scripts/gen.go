@@ -7,14 +7,11 @@ import (
 )
 
 func main() {
-	// Create or overwrite a file named "generated.go" in the root project directory
 	file, err := os.Create("generated.go")
 	if err != nil {
 		panic(err)
 	}
 	defer file.Close()
-
-	// Add a time-based motivational quote dynamically
 	hour := time.Now().Hour()
 	var quote string
 	switch {
