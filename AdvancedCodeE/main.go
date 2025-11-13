@@ -2,78 +2,89 @@ package main
 
 import (
 	"fmt"
-	"math" // 1. For IntelliSense on a module
+	"strings"
+	"time"
 )
 
-// User represents a simple user.
-type User struct {
-	// 2. DEMO: Start typing 'Username' here and see completion
-	Username string
-	Email    string
-	IsActive bool
+type Car struct {
+	Model string
+	Year  int
+	Brand string
 }
 
-// Greet prints a greeting message.
-func (u *User) Greet() {
-	// 3. DEMO: Type 'u.' to see 'Username', 'Email', etc.
-	fmt.Printf("Hello, %s! Welcome back.\n", u.Username)
+// Person represents a simple person.
+type Person struct {
+	FirstName string
+	LastName  string
+	BirthYear int
 }
 
-// GetProfileInfo gets a formatted string of user info.
-func (u *User) GetProfileInfo() string {
-	userInfo := fmt.Sprintf("User: %s", u.Username)
-
-	// 4. DEMO (Navigation): Ctrl+Click (or F12) on 'formatUserEmail'
-	//    to "Go to Definition"
-	emailInfo := formatUserEmail(u.Email)
-
-	return fmt.Sprintf("%s\n%s", userInfo, emailInfo)
+// FullName returns the full name.
+func (p Person) FullName() string {
+	return fmt.Sprintf("%s %s", p.FirstName, p.LastName)
 }
 
-// formatUserEmail formats the email string for display.
-func formatUserEmail(emailString string) string {
-	// 5. DEMO (Navigation): Right-click this function name -> "Find Usages"
-	//    (or Alt+F7)
-	return fmt.Sprintf("Email: <%s>", emailString)
+// Age calculates the person's age.
+func (p Person) Age() int {
+	// 2. DEMO (IntelliSense - Module):
+	// Basic Code Completion with time module
+	age := time.Now().Year() - p.BirthYear
+	return age
 }
 
-// NewUser is a constructor-like function for User.
-func NewUser(username, email string) *User {
-	// 6. DEMO (IntelliSense):
-	//    When filling this struct, GoLand suggests the field names
-	return &User{
-		Username: username,
-		Email:    email,
-		IsActive: true,
-	}
+// Greet prints a greeting.
+func (p Person) Greet() {
+	// 3. DEMO (Navigation - Go to Definition):
+	fmt.Printf("Hello, my name is %s and I am %d years old!\n",
+		p.FullName(), p.Age())
 }
+
+// Greeter is an interface for things that can greet.
+type Greeter interface {
+	// 4. DEMO (Navigation - Find Usages):
+	Greet()
+}
+
+// SayHello makes a Greeter greet.
+func SayHello(g Greeter) {
+	g.Greet()
+
+}
+
+//Generate Feature
 
 func main() {
-	// 7. DEMO (IntelliSense):
-	//    Start typing 'NewUser(' and see the parameter hints (username, email)
-	user1 := NewUser("go_developer", "gopher@example.com")
+	var name = "GoLand"
+	fmt.Println("Welcome to", name)
 
-	// 8. DEMO (Code Completion):
-	//    Type 'user1.' and see the list of methods and fields
-	//    (Greet, GetProfileInfo, Username, etc.)
-	user1.Greet()
+	// 5. DEMO (IntelliSense - Struct Literal):
+	// IntelliSense
+	user := Person{
+		FirstName: "James",
+		LastName:  "Bond",
+		BirthYear: 2000,
+	}
 
-	profile := user1.GetProfileInfo()
-	fmt.Println(profile)
+	// 6. DEMO (Code Completion):
+	user.Greet()
+	user.Age()
+	user.FullName()
 
-	// 9. DEMO (Shortcuts - Commenting):
-	//    Select the two lines below and press Ctrl+/ (or Cmd+/)
-	//    to toggle line comments.
-	fmt.Println("This is a test line 1.")
-	fmt.Println("This is a test line 2.")
+	// 7. DEMO (IntelliSense - Module):
+	// strings
+	text := "goland IDE demo"
+	lower := strings.ToLower(text)
+	fmt.Println(lower)
+	// 8. DEMO (Shortcuts - Commenting):
+	// Select these next two lines of code with your mouse.
+	// Press 'Ctrl+/' (or 'Cmd+/') to toggle them as comments.
+	//fmt.Println("This is a test line 1.")
+	//fmt.Println("This is a test line 2.")
 
-	// 10. DEMO (Shortcuts - Formatting):
-	//     Delete the indentation for 'val := 1+2' to make it messy
-	//     Then, press the "Reformat Code" shortcut (Ctrl+Alt+L or Cmd+Option+L)
-	val := 1 + 2
-	fmt.Printf("The value is: %d\n", val)
+	// 9. DEMO (Shortcuts - Formatting):
+	// Manually delete the indentation for the line below.
+	// Then, press 'Ctrl+Alt+L' (or 'Cmd+Option+L').
+	// GoLand will instantly reformat the *entire file* correctly.
+	fmt.Println("This line will be auto-formatted.")
 
-	// 11. DEMO (IntelliSense - Imports):
-	//     Type 'math.' and see all the functions from the imported module
-	fmt.Printf("The value of Pi is: %f\n", math.Pi)
 }
