@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"math" // 1. For IntelliSense on a module
+	"math" // 1. For IntelliSense on a modul
 )
 
 // User represents a simple user.
