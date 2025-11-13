@@ -1,18 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func main() {
-	total := calculateSum(5, 10, 0, 14)
-	displayTotal(total)
-}
+	radius := 10.0
+	area := math.Pi * math.Pow(radius, 2)
+	perimeter := 2 * math.Pi * radius
 
-func displayTotal(total int) (int, error) {
-	return fmt.Println("Total:", total)
-}
-
-func calculateSum(a int, b int, c int, d int) int {
-	sum := a + b
-	fmt.Println("Sum is:", sum)
-	return sum
+	fmt.Printf("Circle Area: %.2f\n", area)
+	fmt.Printf("Circle Perimeter: %.2f\n", perimeter)
 }

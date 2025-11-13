@@ -4,7 +4,7 @@ import "fmt"
 
 func main() {
 	r := 5.0
-	area := palit(r) // works because same package
+	area := testR(r) // works because same package
 	fmt.Println("Area:", area)
 }
 
