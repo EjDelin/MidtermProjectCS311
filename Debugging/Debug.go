@@ -1,4 +1,4 @@
-package Debug.go
+package main
 
 import (
 	"fmt"
@@ -18,7 +18,6 @@ func processOrder(o Order, wg *sync.WaitGroup, total *float64 /*mu *sync.Mutex*/
 
 	// BUG 1: concurrent write to shared variable (race condition)
 	*total += o.Amount
-
 	// BUG 2: logic bug, forgot to check for negative orders
 	if o.Amount < 0 {
 		fmt.Printf("Warning: Negative amount detected for order %d\n", o.ID)
