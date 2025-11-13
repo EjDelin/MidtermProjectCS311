@@ -11,13 +11,11 @@ const (
 	Truck
 	Bus
 	Airplane
-	Tuktuk
-	Train
 )
 
 func main() {
 	//vehicleNames := []string{"Car", "Bike", "Truck", "Bus", "Airplane", "Tuktuk", "Train"}
-	vehicles := []Vehicle{Car, Bike, Truck, Bus, Airplane, Tuktuk, Train}
+	vehicles := []Vehicle{Car, Bike, Truck, Bus, Airplane}
 
 	for _, v := range vehicles {
 		fmt.Println(v)

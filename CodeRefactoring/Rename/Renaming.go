@@ -11,7 +11,8 @@ func main() {
 	fmt.Println("Area:", area)
 }
 
-func addNumbers(a int, b int) int {
+// AddNumbers TODO: Call this method in other classes
+func AddNumbers(a int, b int) int {
 	sum := a + b
 	fmt.Println("Sum is:", sum)
 	return sum
