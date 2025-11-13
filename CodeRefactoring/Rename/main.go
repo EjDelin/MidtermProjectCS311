@@ -6,9 +6,8 @@ import (
 )
 
 func main() {
-	r := 5.0
-	area := palit(r) // works because same package
-	fmt.Println("Area:", area)
+	total := addNumbers(5, 10)
+	fmt.Println("Total:", total)
 }
 
 func addNumbers(a int, b int) int {
