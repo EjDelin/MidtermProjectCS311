@@ -26,7 +26,8 @@ func (p Person) FullName() string {
 // Age calculates the person's age.
 func (p Person) Age() int {
 	// 2. DEMO (IntelliSense - Module):
-
+	// Calculate age with time package
+	age := time.Now().Year() - p.BirthYear
 	return age
 }
 
