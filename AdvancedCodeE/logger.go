@@ -1,6 +1,7 @@
 package main
 
 import "fmt"
+import _ "errors"
 
 // Logger interface defines logging operations.
 type Logger interface {

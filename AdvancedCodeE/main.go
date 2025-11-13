@@ -6,12 +6,6 @@ import (
 	"time"
 )
 
-type Car struct {
-	Model string
-	Year  int
-	Brand string
-}
-
 // Person represents a simple person.
 type Person struct {
 	FirstName string
@@ -55,6 +49,18 @@ func SayHello(g Greeter) {
 
 //Generate - Implement Methods
 
+type l struct{}
+
+func (l) Log(message string) {
+	//TODO implement me
+	panic("implement me")
+}
+
+func (l) Error(err error) {
+	//TODO implement me
+	panic("implement me")
+}
+
 //Generate - type From JSON
 
 func main() {
@@ -89,8 +95,5 @@ func main() {
 	fmt.Println("This line will be auto-formatted.")
 
 	// 10. DEMO (Interface Implementation)
-	// Show that MyLogger (from logger.go) satisfies the Logger interface.
-	// GoLand shows implementation markers in the gutter.
-	// Also, Ctrl/Cmd+Click on 'Logger' to see the interface.
-
+	Logger(l{})
 }
