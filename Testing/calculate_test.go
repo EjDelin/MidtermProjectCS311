@@ -29,7 +29,6 @@ func TestCalculateTableParallel(t *testing.T) {
 	for _, tt := range tests {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
-			t.Parallel()
 
 			if got := Calculate(tt.input); got != tt.want {
 				t.Errorf("Calculate(%d) = %s; want %s", tt.input, got, tt.want)
