@@ -32,6 +32,8 @@ func (p Person) Age() int {
 	return age
 }
 
+// NAVIGATION
+
 // Greet prints a greeting.
 func (p Person) Greet() {
 	// 3. DEMO (Navigation - Go to Definition):
@@ -51,7 +53,8 @@ func SayHello(g Greeter) {
 
 }
 
-//Generate Feature
+//Generate - Implement Methods
+//Generate - type From JSON
 
 func main() {
 	var name = "GoLand"
@@ -78,13 +81,11 @@ func main() {
 	// 8. DEMO (Shortcuts - Commenting):
 	// Select these next two lines of code with your mouse.
 	// Press 'Ctrl+/' (or 'Cmd+/') to toggle them as comments.
-	//fmt.Println("This is a test line 1.")
-	//fmt.Println("This is a test line 2.")
+	fmt.Println("This is a test line 1.")
+	fmt.Println("This is a test line 2.")
 
 	// 9. DEMO (Shortcuts - Formatting):
-	// Manually delete the indentation for the line below.
-	// Then, press 'Ctrl+Alt+L' (or 'Cmd+Option+L').
-	// GoLand will instantly reformat the *entire file* correctly.
+	//unformatted comment
 	fmt.Println("This line will be auto-formatted.")
 
 }
